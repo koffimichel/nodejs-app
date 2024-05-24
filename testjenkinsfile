@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+
+    stages {
+        agent { docker { image 'node:14'}}
+        stage('Dep install'){
+            steps{
+                sh 'npm install'
+            }
+        }
+    }
+}
